@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio - Architect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            color: #2d1b69;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 80px 5%;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border: 2px solid #d1d5db;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .nav-dot.active {
+            background: #8b7cc8;
+            border-color: #8b7cc8;
+            transform: scale(1.3);
+        }
+
+        .nav-dot:hover {
+            border-color: #8b7cc8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            text-align: left;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: #2d1b69;
+            letter-spacing: -2px;
+        }
+
+        .hero-content h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: #4338ca;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+            max-width: 500px;
+        }
+
+        .personality-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #8b7cc8;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #8b7cc8;
+        }
+
+        .tag:nth-child(even) {
+            background: #4338ca;
+            border-color: #4338ca;
+        }
+
+        .cta-button {
+            background: #8b7cc8;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #7c6bb8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(139, 124, 200, 0.3);
+        }
+
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+
+        .geometric-shape {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #8b7cc8, #4338ca);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            box-shadow: 0 10px 25px rgba(139, 124, 200, 0.2);
+        }
+
+        /* Section Backgrounds */
+        .about {
+            background: white;
+        }
+
+        .skills {
+            background: #f8fafc;
+        }
+
+        .projects {
+            background: white;
+        }
+
+        .contact {
+            background: #f8fafc;
+        }
+
+        /* About Section */
+        .about h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: #2d1b69;
+            text-align: left;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #8b7cc8, #4338ca);
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(139, 124, 200, 0.15);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 300;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Skills Section */
+        .skills h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: #2d1b69;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category:hover {
+            border-color: #8b7cc8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 124, 200, 0.15);
+        }
+
+        .skill-category:nth-child(even):hover {
+            border-color: #4338ca;
+            box-shadow: 0 8px 25px rgba(67, 56, 202, 0.15);
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #2d1b69;
+        }
+
+        .skill-list {
+            list-style: none;
+            color: #64748b;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        /* Projects Section */
+        .projects h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: #2d1b69;
+            text-align: center;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card:hover {
+            border-color: #8b7cc8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 124, 200, 0.15);
+        }
+
+        .project-card:nth-child(even):hover {
+            border-color: #4338ca;
+            box-shadow: 0 8px 25px rgba(67, 56, 202, 0.15);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #2d1b69;
+        }
+
+        .project-card p {
+            color: #64748b;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background: #f1f5f9;
+            color: #8b7cc8;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #e5e7eb;
+        }
+
+        .tech-tag:nth-child(even) {
+            color: #4338ca;
+        }
+
+        .project-link {
+            color: #8b7cc8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #7c6bb8;
+        }
+
+        /* Contact Section */
+        .contact h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: #2d1b69;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: #2d1b69;
+        }
+
+        .contact-info p {
+            color: #64748b;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            padding: 0.8rem 0;
+            color: #64748b;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .contact-details li strong {
+            color: #2d1b69;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2d1b69;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            background: white;
+            color: #2d1b69;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8b7cc8;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #9ca3af;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #8b7cc8, #4338ca);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(139, 124, 200, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .about h2,
+            .skills h2,
+            .projects h2,
+            .contact h2 {
+                font-size: 2.5rem;
+            }
+
+            .nav {
+                right: 20px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .geometric-shape {
+                width: 250px;
+                height: 250px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .personality-tags {
+                justify-content: center;
+            }
+
+            .hero {
+                text-align: center;
+            }
+        }
+
+        /* Smooth animations */
+        .section-content > * {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Dots -->
+    <div class="nav">
+        <div class="nav-dot active" data-target="hero"></div>
+        <div class="nav-dot" data-target="about"></div>
+        <div class="nav-dot" data-target="skills"></div>
+        <div class="nav-dot" data-target="projects"></div>
+        <div class="nav-dot" data-target="contact"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero">
+        <div class="section-content">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="personality-tags">
+                        <span class="tag">TECHNICAL LEAD</span>
+                        <span class="tag">PRODUCT FOCUSED</span>
+                        <span class="tag">SCALABLE SOLUTIONS</span>
+                        <span class="tag">ENTERPRISE READY</span>
+                    </div>
+                    <h1>Senior Developer</h1>
+                    <h2>Technical Lead & Product Engineer</h2>
+                    <p>Experienced software engineer specializing in scalable web applications, technical leadership, and driving product innovation from concept to deployment.</p>
+                    <a href="#contact" class="cta-button">View My Work</a>
+                </div>
+                <div class="hero-visual">
+                    <div class="geometric-shape">
+                        ⚡
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="section-content">
+            <h2>About</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Senior Software Engineer with 5+ years of experience leading cross-functional teams and delivering enterprise-grade applications. Proven track record of architecting scalable solutions that drive business growth and improve operational efficiency.</p>
+                    <br>
+                    <p>Expert in full-stack development, cloud infrastructure, and agile methodologies. Successfully led technical initiatives that resulted in 40% performance improvements and $2M+ cost savings through strategic technology decisions.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Enterprise Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Leadership</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Team Members Led</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label">System Uptime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="section-content">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <ul class="skill-list">
+                        <li>React.js & Next.js</li>
+                        <li>TypeScript & JavaScript ES6+</li>
+                        <li>Vue.js & Angular</li>
+                        <li>Responsive Web Design</li>
+                        <li>Progressive Web Apps</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend & Infrastructure</h3>
+                    <ul class="skill-list">
+                        <li>Node.js & Python</li>
+                        <li>PostgreSQL & MongoDB</li>
+                        <li>REST & GraphQL APIs</li>
+                        <li>Microservices Architecture</li>
+                        <li>Database Optimization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <ul class="skill-list">
+                        <li>AWS & Microsoft Azure</li>
+                        <li>Docker & Kubernetes</li>
+                        <li>CI/CD Pipeline Management</li>
+                        <li>Infrastructure as Code</li>
+                        <li>Monitoring & Analytics</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Leadership & Strategy</h3>
+                    <ul class="skill-list">
+                        <li>Technical Team Leadership</li>
+                        <li>Agile & Scrum Methodologies</li>
+                        <li>Code Review & Standards</li>
+                        <li>Performance Optimization</li>
+                        <li>Stakeholder Communication</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="section-content">
+            <h2>Key Projects & Achievements</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Enterprise Data Analytics Platform</h3>
+                    <p>Led development of a real-time analytics dashboard serving 10,000+ daily users. Achieved 99.9% uptime and reduced data processing time by 60%. Generated $1.2M in operational savings through automated reporting.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                    <a href="#" class="project-link">View Technical Details →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Multi-Tenant SaaS Architecture</h3>
+                    <p>Architected and delivered a scalable B2B platform handling 500k+ monthly transactions. Implemented microservices architecture that improved system reliability by 45% and reduced deployment time by 80%.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Stripe</span>
+                    </div>
+                    <a href="#" class="project-link">View Case Study →</a>
+                </div>
+                <div class="project-card">
+                    <h3>AI-Driven Process Automation</h3>
+                    <p>Developed machine learning pipeline that automated 70% of manual data processing tasks. Led cross-functional team of 8 engineers, delivered project 20% under budget and reduced operational costs by $800k annually.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Azure</span>
+                    </div>
+                    <a href="#" class="project-link">View Implementation →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="section-content">
+            <h2>Professional Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Open to New Opportunities</h3>
+                    <p>Seeking senior technical roles where I can drive product innovation, lead high-performing teams, and architect scalable solutions that deliver measurable business impact. Available for technical leadership positions, consulting engagements, and strategic partnerships.</p>
+                    <ul class="contact-details">
+                        <li><strong>Email:</strong> your.name@professional.com</li>
+                        <li><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</li>
+                        <li><strong>GitHub:</strong> github.com/yourusername</li>
+                        <li><strong>Portfolio:</strong> yourwebsite.com</li>
+                        <li><strong>Location:</strong> Available for Remote/Hybrid</li>
+                    </ul>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Business Email</label>
+                        <input type="email" id="email" name="email" placeholder="name@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company" placeholder="Your company name">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Job Opportunity, Consulting, Partnership, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Please describe the opportunity or project details..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Professional Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navigation functionality
+        document.querySelectorAll('.nav-dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                const target = dot.getAttribute('data-target');
+                document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Update active navigation dot
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navDots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('data-target') === current) {
+                    dot.classList.add('active');
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you within 24 hours.');
+            e.target.reset();
+        });
+
+        // CTA button smooth scroll
+        document.querySelector('.cta-button').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
