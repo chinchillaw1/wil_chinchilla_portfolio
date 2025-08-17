@@ -572,117 +572,195 @@ function generateTextContent() {
 ================================================================
 
 CONTACT INFORMATION
-Email: wil.chinchilla@professional.com
+Email: wilchinchilla@gmail.com
 LinkedIn: linkedin.com/in/wilchinchilla
 Location: San Diego, California
 
 PROFESSIONAL SUMMARY
-Senior Data Analytics Manager with 8+ years of experience leading enterprise analytics implementations across 12+ industries. Expert in data architecture, team leadership, and turning complex data challenges into business solutions.
+Senior Data Analytics Manager with 14+ years of experience leading cross-functional teams and delivering enterprise-grade analytics solutions. Proven track record of architecting scalable data platforms that drive business growth and improve operational efficiency. Expert in data architecture, analytics implementation, and team leadership with successful technical initiatives resulting in 40% performance improvements and $2M+ cost savings.
 
-KEY ACHIEVEMENTS
-• Led teams of 8+ data engineers and analysts
-• Processed 10TB+ daily data with 60% speed improvement
-• Increased customer retention by 25% through ML models
-• Managed $2.1M analytics budget with 15% under-budget delivery
-• Supported 500+ business users with real-time dashboards
-• Saved $800K annually through cloud migration
-• Improved marketing ROI by 35% with predictive models
+RELEVANT WORK EXPERIENCE
 
-PROFESSIONAL EXPERIENCE
+EY - MANAGER, DATA & ANALYTICS (September 2019 – August 2025)
+• Current engagement has grown from $700K Total Engagement Revenue (TER) to $1.5M TER within 4 years
+• Lead a team of 4 senior technical consultants for a large media account while overseeing engagement economics, manage account relationships, and discover new engagement opportunities
+• Data collection/digital analytics lead for 4 large scale transformation projects that were key accounts that surpassed the $5 million mark
+• Led multi-year martech strategy and implementation for a Fortune 500 media client across 6 brands, 26 websites, mobile apps, OTT, and STB platforms
+• Managed Adobe Launch and Adobe WebSDK implementations, enabling privacy-compliant data collection into Adobe Experience Platform (CDP)
+• Directed teams of 4+ consultants (onshore and offshore), delivering on-time, scalable instrumentation and analytics enablement across platforms
+• Delivered KPI frameworks and executive dashboards to track site performance and customer behavior, resulting in faster decision-making and improved CX
+• Collaborated across product, engineering, brand, and UX teams to align global tech and content roadmaps with regional priorities
+• Played key role in multi-million dollar digital transformation programs, modernizing data architecture and streamlining vendor integrations
+• Consult EY clients across various industries on the delivery, architecture, and strategy of data collection/digital marketing analytics products
 
-CURRENT COMPANY (2022 - Present)
-Senior Data Analytics Manager
-• Lead a team of 8 data engineers and analysts to deliver enterprise-grade analytics solutions
-• Architected scalable data pipelines processing 10TB+ daily, improving processing speed by 60%
-• Implemented machine learning models that increased customer retention by 25%
-• Managed $2.1M analytics budget and delivered projects 15% under budget consistently
+EY - SENIOR CONSULTANT, DATA & ANALYTICS (April 2017 – September 2019)
+• Managed, in client facing consultative role, end-to-end digital architecture for Adobe Analytics SDK for both iOS and Android as part of a large digital transformation project for a client within the travel industry
+• Executed Adobe Analytics SDK instrumentation across mobile and web for travel and publishing clients undergoing full-stack digital modernization
+• Managed client relationships with stakeholders and represented clients in product meetings to execute data governance strategy and documentation
+• Created and executed client facing workshops for Adobe Analytics reporting, QA, documentation, governance, as well as other tools within the Adobe Marketing Cloud Suite like Test and Target
+• Created Adobe Data feed to leverage clickstream data to push into databases in order to use SQL
+• Provided support for OneTrust implementation and guidance around GDPR in regards to data collection
+• Migrated over 200+ 3rd Party Marketing tags for a large scale migration from one tag management system to another for a large publishing brand, improving governance and load performance
+• Facilitated Agile ceremonies and collaborated across cross-functional squads to deliver high-quality digital experiences
+• Created collateral in technical sales presentations and provided various client facing support
+• Developed various analytics tracking solutions for clients using Adobe Dynamic Tag Management (DTM) to implement Omniture/Site Catalyst/Adobe Analytics (AA) using jQuery, Angular JS, and Javascript
+• Provided recommendations and strategies for updating code methodologies for delivering data to reporting tools for both mobile and desktop
 
-PREVIOUS COMPANY (2020 - 2022)
-Data Engineering Lead
-• Built and maintained data infrastructure supporting 500+ business users
-• Developed real-time dashboards reducing executive decision-making time by 40%
-• Led migration to cloud-based analytics platform, saving $800K annually
-• Mentored junior developers and established data governance best practices
+EY (FORMERLY SOCIETY CONSULTING) - CONSULTANT, DATA & ANALYTICS (August 2015 – April 2017)
+• Delivered custom data collection strategies using Adobe DTM, JavaScript (jQuery, AngularJS), and modern front-end frameworks
+• Developed various analytics tracking solutions for clients using Adobe Dynamic Tag Management (DTM) to implement Omniture/Site Catalyst/Adobe Analytics (AA) using jQuery, Angular JS, and Javascript
+• Supported clients with analytics QA, data layer design, and site/app instrumentation for clickstream and video analytics
+• Helped define tracking plans and stakeholder goals, turning ambiguous requirements into measurable data capture
+• Provided recommendations and strategies for updating code methodologies for delivering data to reporting tools for both mobile and desktop
+• Presented in technical sales presentations and provided various client facing support
 
-EARLIER COMPANY (2018 - 2020)
-Senior Data Analyst
-• Designed and implemented automated reporting systems for C-level executives
-• Created predictive models that improved marketing ROI by 35%
-• Collaborated with cross-functional teams to deliver data-driven insights
+NUMERIC ANALYTICS - SENIOR CONSULTANT, SOLUTION ARCHITECTURE (August 2014 – August 2015)
+• Developed various analytics tracking solutions for clients using Adobe Dynamic Tag Management (DTM) to implement Omniture/Site Catalyst/Adobe Analytics (AA) using jQuery and Javascript
+• Provided recommendations for optimizing current analytical reports and updating tracking methodologies for various clients
+• Provided analytics QA support for various technologies including mobile web, mobile native apps, and desktop for clients from Fortune 100 to Fortune 500 companies in various different marketing verticals
+
+BARCLAYCARD US - ADOBE ANALYTICS (OMNITURE) TECH LEAD (September 2013 – August 2014)
+• Created technical documentation for implementing clickstream analytics tool, Adobe Analytics (Omniture) for bPay and Barclaycard US Servicing mobile apps for iPhone, iPad, and Android devices
+• Created analytic data presentation and automated dashboards for bPay app to various business owners in the mobile and community groups of Barclaycard US
+• Coordinated with Agile Scrum mobile teams to fix defects, which included Business Analysts, Project Managers, and Mobile App Developers
+• Coordinated reporting requirements with internal customers to meet business objectives for mobile department
+
+CONTRACTOR FOR BRIDGEPOINT EDUCATION VIA AQUENT - INTERNET MARKETING SPECIALIST (March 2013 – September 2013)
+• Created, optimized (A/B testing), and sent email marketing messages to students and faculty of Ashford University and University of the Rockies using ESP Lyris
+• Managed an inherited Adobe Analytics (a.k.a. Omniture or Site Catalyst) implementation project and within two months went from 66% to 96% completion of project
+• Managed and provided business requirements for tag management for over 4 major web development projects with 3rd party tags like Kenshoo, C3, DFA Floodlight, Lightning Bolt, Bing Adwords Conversion Tag, Google Adwords Conversion Tag, and Google Remarketing
+• Executed various SEO projects such as content optimization, site speed analysis, image optimization, HTML email SEO, daily SEO traffic reporting (branded vs. generic keywords), monthly SERP traffic reporting, link building, and site audits of recommended improvements
+
+ASK US INTERNATIONAL, INC. - MARKETING MANAGER (October 2012 – March 2013)
+• Traditional and digital marketing storyteller for new B2B start-up SaaS consumer tool within the health insurance industry
+• Executed implementation of standard Google Analytics tracking along with custom tracking and reporting for multiple web properties
+• Developed social media channels and community marketing channels
+
+NRG (PREVIOUSLY RELIANT) - WEB ANALYST/COPYWRITER (May 2011 – September 2012)
+• Managed content refresh projects in English and Spanish that included coordinating with UX managers and designers, Visual Designers, Copywriters, and IT Developers
+• Initiated shared resource role to implement web marketing projects on reporting using Adobe Omniture tools: SiteCatalyst and Test & Target
+• Executed Test & Target test with team to measure the impact of different experiences to see which experience could lead an increase to conversions and revenue of B2B customers. Results in this test increased conversions 32% against the baseline
+• Proofread copy for the Spanish side of reliant.com and provided small translations for creative assets, web pages, and other online components resulting in numerous completed projects on schedule
+
+GETGROUBY.COM (SOLD TO CROWDSAVINGS.COM) - WEB CONTENT & COMMUNITY MANAGER (October 2010 – May 2011)
+• Managed online social media marketing, e-commerce marketing, and public relations in four different markets — Houston, Austin, San Antonio, and Dallas
+• Edited web copy for GetGrouby.com as manager of four freelance writers
+• Managed a daily e-mail marketing campaign with providers MailChimp and Exact Target
+• Edited press releases and provided in-house PR support. Generated coverage in a publication with a circulation of 200,000 and coverage by Houston's ABC-13 News Program
 
 EDUCATION
 
-MASTER OF SCIENCE IN DATA SCIENCE
-University Name (2016 - 2018)
-Specialized in Machine Learning and Statistical Analysis
-Thesis: "Predictive Analytics in Enterprise Environments"
+UNIVERSITY OF HOUSTON - DOWNTOWN
+Bachelor of Science, Professional Writing (English Minor)
+Graduated: August 2010
 
-BACHELOR OF SCIENCE IN COMPUTER SCIENCE
-University Name (2012 - 2016)
-Magna Cum Laude, GPA: 3.8/4.0
-Focus: Database Systems and Software Engineering
+International Experience:
+• London Summer Program, May 2008
+• Paris Summer Program, May 2009
+
+VOLUNTEER SERVICE
+
+HUMAN RIGHTS CAMPAIGN (HRC), HOUSTON CHAPTER
+Marketing and Communications Steering Committee Co-Chair (October 2010 – September 2012)
+• Edited press releases resulting in event listings and local coverage
+• Managed social media marketing campaigns utilizing Facebook, Twitter, and Email
+• Maintained Houston.HRC.org website with events and copy using a corporate content management system
+• Recruited and managed marketing team of volunteers that included photographers, graphic designers, and public relations support
+
+SELECTED LECTURES
+
+UNIVERSITY OF HOUSTON – DOWNTOWN
+Guest Lecturer (November 22, 2011)
+Topic: "Lateral Reporting & Online Marketing"
+Course: Writing for the Media (ENG 3333/COMM 3311)
 
 CERTIFICATIONS & AWARDS
-• AWS Certified Solutions Architect (Amazon Web Services, 2023)
-• Tableau Desktop Certified Professional (Tableau, 2022)
-• Data Science Excellence Award (Current Company, 2023)
-• Machine Learning Specialization (Stanford University, 2021)
+• Adobe Certified Expert - Adobe Customer Journey Analytics Developer (Adobe, May 2, 2025 - May 2, 2027)
+• Adobe Certified Master - Adobe Analytics Architect (Adobe, Oct 15, 2023 - Oct 16, 2025)
 
-TECHNICAL SKILLS
+KEY SKILLS & TECHNOLOGIES
 
-Programming Languages & Development:
-• JavaScript (React, Node.js, ES6+)
-• HTML, CSS, SQL
-• Python, R
-• API Integration (OAuth, JWT)
-• Code Repositories (GitHub, Bitbucket)
+Analytics Platforms:
+• Adobe Analytics, Adobe Experience Platform (CDP), Adobe Launch, Adobe DTM, Omniture/Site Catalyst, Google Analytics
+
+Programming & Frameworks:
+• JavaScript, jQuery, AngularJS, WebSDK, HTML, CSS
+
+Marketing Technology:
+• Tag Management Systems (TMS), OneTrust, Privacy Compliance, GDPR, Test & Target, Adobe Marketing Cloud Suite
+
+Data Management:
+• Adobe Data Feeds, SQL, Database Integration, Clickstream Analytics
+
+Email Marketing:
+• ESP Lyris, MailChimp, Exact Target, A/B Testing
+
+SEO & Optimization:
+• Content optimization, Site speed analysis, Image optimization, SERP reporting, Link building
+
+Tag Management:
+• Kenshoo, C3, DFA Floodlight, Lightning Bolt, Bing Adwords, Google Adwords, Google Remarketing
+
+Project Management:
+• Agile methodologies, Scrum, Cross-functional team leadership, Client relationship management
+
+Languages:
+• English, Spanish (Translation and Copywriting)
+
+Content Management:
+• CMS platforms, Social media marketing, Public relations, Community management
+
+Client Industries:
+• Media & Entertainment, Travel, Publishing, Financial Services, Education, Healthcare, Energy
+
+Specializations:
+• Digital transformation, Data architecture, Martech strategy, Mobile SDK implementation
+
+TECHNICAL PROFICIENCY
+
+Programming Languages + Skills:
+• JavaScript (React, Node.js, ES6+), HTML, CSS, JS, jQuery & AngularJS, Adobe WebSDK
+• Schema Design + JSON, API Integration - OAuth, JWT, Code Repositories - Github, Bitbucket
+• SQL (90%), Python (95%), ETL/ELT Pipeline Dev (65%), R (65%), Mobile App Dev Exp (60%)
 
 Analytics Implementation:
-• Adobe Analytics (AA)
-• Customer Journey Analytics (CJA)
-• Google Analytics
-• Adobe Launch, Google Tag Manager, Tealium
-• Data Layer (EDDL, WC3)
+• Data Layer - EDDL, WC3, Adobe Analytics - AA, Customer Journey Analytics - CJA
+• Google Analytics, Adobe Launch - TMS, Google Tag Manager - TMS, Tealium - TMS, Ensighten - TMS
+• 3rd Party Marketing Tags
 
 Reporting & BI Tools:
-• Excel, Power BI, Tableau
-• Adobe Analytics Workspace
-• Customer Journey Analytics
+• Excel "Ol' Faithful", Adobe Analytics Workspace, Customer Journey Analytics, Power BI (90%), Tableau (90%)
 
-Cloud Platforms:
-• Sevalla, Azure, Snowflake, AWS
+Marketing Technology Exp:
+• Adobe Experience Cloud, Adobe Experience Platform - CDP (80%), Salesforce (80%), Marketo (80%)
+• Adobe Campaign (80%), Google 360/Ad Platform (80%), Optimization (Target, Optimizely) (75%)
+• Adobe Experience Manager - CMS (75%), OneTrust & Privacy Compliance, Adobe DTM, Adobe Data Feeds & SQL Integration
+
+Email Marketing & SEO:
+• Email Marketing (Lyris, MailChimp, ExactTarget), A/B Testing & Optimization
+• SEO (Content, Speed, SERP, Link Building), 3rd Party Marketing Tags (Kenshoo, C3, DFA, etc.)
+
+Soft Skills:
+• Analytics Project Lead, Led Stakeholder Interviews, PM Software - JIRA, ADO, Asana
+• Roadmap Planning, Marketing Technology Assessment, People Process Improvement
+• Account Management, Billing, Cross-Functional Team Leadership (85%), Scrum Agile Lead (85%)
+
+Cloud Platforms for Data:
+• Sevalla, Azure (65%), Snowflake (50%), AWS (40%)
 
 Data Governance & Compliance:
-• Cookie Compliance
-• Data Privacy and Consent Management
-• Data QA and Validation
-• Analytics Audit and Optimization
-• Data Documentation and Labeling
+• Cookie Compliance, Data Privacy and Consent Management, Data QA and Validation
+• Analytics Audit and Optimization, Data Documentation + Labeling
 
-LEADERSHIP & SOFT SKILLS
-• Analytics Project Leadership
-• Cross-Functional Team Leadership
-• Stakeholder Communication
-• Strategic Planning & Roadmapping
-• Agile/Scrum Methodology
-• Account Management & Billing
-• People Process Improvement
-• Marketing Technology Assessment
+Artificial Intelligence Skills:
+• Generative AI Platforms: Claude, ChatGPT, AI-Powered Development - Cursor IDE
+• Workflow Optimization: AI-assisted coding, analysis, documentation
+• Business Applications: Report generation, data analysis, process automation
+• Prompt Optimization (65%), ML/LLM Development (40%)
 
-INDUSTRY EXPERIENCE
-Worked across 12+ industry verticals including:
-• Entertainment & Media
-• Healthcare & Medical
-• Technology & Software
-• Consumer Goods
-• Manufacturing
-• Financial Services
-• Sports & Entertainment
-• Pharmaceutical
-• Internet Infrastructure
-• Media & Marketing
-• Retail Technology
-• Travel & Hospitality
+Languages & Content Management:
+• English (Native), Spanish (Translation & Copywriting), CMS Platforms & Content Management
+• Social Media Marketing & PR
 
 PERSONALITY & WORKING STYLE
 INTJ Personality Type - The Architect
