@@ -1130,3 +1130,93 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* Hero Photo Styles */
+.hero-photo-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-photo {
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Circular Photo */
+.photo-circular {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--primary);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.photo-circular:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(99, 102, 241, 0.3);
+}
+
+/* Photo Image */
+.photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Animated ring around photo */
+.photo-ring {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+    background-size: 400% 400%;
+    animation: gradientRotate 3s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientRotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Hero text adjustments */
+.hero-intro {
+    flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-photo-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .hero-intro {
+        text-align: center;
+    }
+
+    .photo-circular {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-circular {
+        width: 80px;
+        height: 80px;
+    }
+}
