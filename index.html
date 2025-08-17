@@ -4,83 +4,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wil Chinchilla - Data and Analytics Pro</title>
+    <meta name="description" content="Wil Chinchilla - Senior Data Analytics Manager with 8+ years of experience leading enterprise analytics implementations across 12+ industries. Expert in data architecture and team leadership.">
+    <meta name="keywords" content="data analytics, data science, analytics manager, data architecture, team leadership, enterprise analytics">
+    <meta name="author" content="Wil Chinchilla">
+    <meta property="og:title" content="Wil Chinchilla - Data and Analytics Pro">
+    <meta property="og:description" content="Senior Data Analytics Manager with 8+ years of experience leading enterprise analytics implementations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wil Chinchilla - Data and Analytics Pro">
+    <meta name="twitter:description" content="Senior Data Analytics Manager with 8+ years of experience leading enterprise analytics implementations.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="logic.js"></script>
+
+
 
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav" id="navbar">
+    <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-content">
-            <a href="#home" class="logo">Wil Chinchilla</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Wil</a></li>
-                <li><a href="#expertise">Skills</a></li>
-                <li><a href="#projects">Project Portfolio</a></li>
-                <li><a href="#experience">Experience/CV</a></li>
-                <li><a href="#why-wil">Why Choose Wil?</a></li>
-                <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
+            <a href="#home" class="logo" aria-label="Go to homepage">Wil Chinchilla</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks" role="menubar">
+                <li role="none"><a href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a href="#projects" role="menuitem">Major Career Wins</a></li>
+                <li role="none"><a href="#about" role="menuitem">About Wil</a></li>
+                <li role="none"><a href="#expertise" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#experience" role="menuitem">Experience/CV</a></li>
+                <li role="none"><a href="#why-wil" role="menuitem">Why Choose Wil?</a></li>
+                <li role="none"><a href="#contact" class="nav-cta" role="menuitem">Get In Touch</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                
+ <!-- Simplified Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            
+            <div>
                 <div class="hero-photo">
                     <!-- Circular Photo with animated border -->
                     <div class="photo-circular">
                         <div class="photo-ring"></div>
-                        <!-- Replace "your-headshot.jpg" with your actual photo file -->
                         <img src="https://media.licdn.com/dms/image/v2/C4E03AQFnZVxSlI_gGA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517760057763?e=1758153600&v=beta&t=4OnPK9UtlXR6At6DVedThN3ozkLGyShS_I2riJFuJ3c" alt="Wil Chinchilla" class="photo-image">
-                        <!-- Remove this placeholder when you add your photo -->
-                        <!-- <div class="photo-placeholder">WC</div> -->
                     </div>
                 </div>
-                
+
                 <div class="hero-badge">Available for new opportunities</div>
-                <h1>Wilbert (Wil) Chinchilla</h1>
-                <p class="hero-subtitle">Data and Analytics Leader</p>
-                <p class="hero-description">
-                    Experienced data architectect and engineer specializing in scalable web applications, 
-                    technical leadership, and driving product innovation from concept to deployment for data products; i.e., reporting and insights, creating dashboards, data layer design, data collection, and data activation.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+                
+                <div class="hero-intro">
+                    
+                    <h1>Wilbert (Wil) Chinchilla</h1>
+                    <p class="hero-subtitle">Data & Analytics Leader</p>
+                    <p class="hero-description">
+                        8+ years leading enterprise analytics implementations across 12+ industries. 
+                        Expert in data architecture, team leadership, and turning complex data challenges into business solutions.
+                    </p>
+
+                    <!-- Your existing project cards -->
+                    <h2 class="section-title">Major Career Wins</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-icon">📊</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Enterprise Analytics Platform</h3>
+                    <p class="project-description">
+                        Led development of a real-time analytics dashboard serving 10,000+ daily users. 
+                        Achieved 99.9% uptime and reduced data processing time by 60%.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">$1.2M</span>
+                            <span class="metric-label">Cost Savings</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">Faster Processing</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                    <a href="#" class="project-link">View Case Study →</a>
+                </div>
+            </div>
+            
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-icon">🏗️</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Multi-Tenant SaaS Architecture</h3>
+                    <p class="project-description">
+                        Architected and delivered a scalable B2B platform handling 500k+ monthly transactions. 
+                        Implemented microservices architecture that improved system reliability.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">500K+</span>
+                            <span class="metric-label">Monthly Transactions</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">45%</span>
+                            <span class="metric-label">Better Reliability</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Stripe</span>
+                    </div>
+                    <a href="#" class="project-link">View Architecture →</a>
+                </div>
+            </div>
+        </div>
+
+
                 </div>
             </div>
 
+        </div>
+    </div>
+</section>
 
-            <div class="hero-visual">
-                <div class="hero-stats">
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number">25+</span>
-                            <span class="stat-label">Enterprise Projects</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Years in Managment and Leadership</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Team Members Led</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">99.9%</span>
-                            <span class="stat-label">System Uptime</span>
-                        </div>
+
+<!-- Projects Section with Analytics Dashboard Intro -->
+<section id="projects" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Portfolio Overview</div>
+            <h2 class="section-title">
+                <span class="text-gradient">Analytics Excellence</span> Across Industries
+            </h2>
+            <p class="section-description">
+                8+ years of digital transformation leadership spanning 12+ industry verticals with proven expertise in enterprise analytics implementations and team leadership.
+            </p>
+        </div>
+
+        <!-- Analytics Dashboard Introduction -->
+        <div class="portfolio-analytics-intro fade-in">
+            <!-- Key Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card stat-card-primary">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-number" id="totalProjects">24</div>
+                    <div class="stat-label">Total Projects</div>
+                </div>
+                <div class="stat-card stat-card-secondary">
+                    <div class="stat-icon">🏢</div>
+                    <div class="stat-number" id="industriesServed">12</div>
+                    <div class="stat-label">Industry Verticals</div>
+                </div>
+                <div class="stat-card stat-card-accent">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-number" id="yearsLeading">7</div>
+                    <div class="stat-label">Years Leading Analytics</div>
+                </div>
+                <div class="stat-card stat-card-success">
+                    <div class="stat-icon">👑</div>
+                    <div class="stat-number" id="leadershipRate">50%</div>
+                    <div class="stat-label">Leadership Rate</div>
+                </div>
+            </div>
+
+            <!-- Charts Dashboard -->
+            <div class="dashboard-grid">
+                <div class="chart-card">
+                    <h3 class="chart-title">Project Distribution by Industry</h3>
+                    <div class="chart-container">
+                        <canvas id="industryChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3 class="chart-title">Leadership Progression Timeline</h3>
+                    <div class="chart-container">
+                        <canvas id="leadershipChart"></canvas>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
+    
 
     
     <!-- About Section -->
@@ -91,7 +211,7 @@
             <h2 class="section-title">Strategic Thinker, Collaborative Leader</h2>
                     <!-- MBTI Integration -->
         <div class="mbti-section fade-in">
-            <img src="architect-desktop2.svg">
+            <img src="architect-desktop2.svg" alt="INTJ Architect Personality Type">
             <div class="mbti-content">
                 <div class="mbti-badge">
                     <span class="mbti-type">INTJ</span>
@@ -327,17 +447,7 @@
                         </div>
                     </div>
 
-                    <div class="skill-progress-item">
-                        <div class="progress-header">
-                            <span class="progress-label">Python</span>
-                            <span class="progress-value">95%</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar blue" data-width="95">
-                                <div class="progress-glow"></div>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <div class="skill-progress-item">
                         <div class="progress-header">
@@ -353,24 +463,24 @@
 
 
                     
-
+                    <div class="skill-progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Python</span>
+                            <span class="progress-value">95%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar blue" data-width="95">
+                                <div class="progress-glow"></div>
+                            </div>
+                        </div>
+                    </div>
 
 
 
 
                     
 
-                    <div class="skill-progress-item">
-                        <div class="progress-header">
-                            <span class="progress-label">Mobile App Dev Exp</span>
-                            <span class="progress-value">60%</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar blue" data-width="60">
-                                <div class="progress-glow"></div>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <div class="skill-progress-item">
                         <div class="progress-header">
@@ -391,6 +501,19 @@
                         </div>
                         <div class="progress-track">
                             <div class="progress-bar blue" data-width="65">
+                                <div class="progress-glow"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="skill-progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Mobile App Dev Exp</span>
+                            <span class="progress-value">60%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar blue" data-width="60">
                                 <div class="progress-glow"></div>
                             </div>
                         </div>
@@ -708,6 +831,19 @@
                         </div>
                     </div>
 
+
+                    <div class="skill-progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">PM Software - JIRA,ADO,Asana</span>
+                            <span class="progress-value">100%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar blue" data-width="100">
+                                <div class="progress-glow"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="skill-progress-item">
                         <div class="progress-header">
                             <span class="progress-label">Roadmap Planning</span>
@@ -745,6 +881,32 @@
                         </div>
                     </div>
 
+
+                    <div class="skill-progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Account Management</span>
+                            <span class="progress-value">100%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar blue" data-width="100">
+                                <div class="progress-glow"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="skill-progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Billing</span>
+                            <span class="progress-value">100%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar blue" data-width="100">
+                                <div class="progress-glow"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="skill-progress-item">
                         <div class="progress-header">
                             <span class="progress-label">Cross-Functional Team Leadership</span>
@@ -768,6 +930,8 @@
                             </div>
                         </div>
                     </div>
+
+
 
                 </div>
 
@@ -899,113 +1063,7 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-eyebrow">Portfolio</div>
-                <h2 class="section-title">Impactful Solutions</h2>
-                <p class="section-description">
-                    Showcasing enterprise-grade projects that deliver measurable business results and drive innovation
-                </p>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon">📊</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Enterprise Analytics Platform</h3>
-                        <p class="project-description">
-                            Led development of a real-time analytics dashboard serving 10,000+ daily users. 
-                            Achieved 99.9% uptime and reduced data processing time by 60%.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">$1.2M</span>
-                                <span class="metric-label">Cost Savings</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">60%</span>
-                                <span class="metric-label">Faster Processing</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">Redis</span>
-                        </div>
-                        <a href="#" class="project-link">View Case Study →</a>
-                    </div>
-                </div>
-                
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon">🏗️</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Multi-Tenant SaaS Architecture</h3>
-                        <p class="project-description">
-                            Architected and delivered a scalable B2B platform handling 500k+ monthly transactions. 
-                            Implemented microservices architecture that improved system reliability.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">500K+</span>
-                                <span class="metric-label">Monthly Transactions</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">45%</span>
-                                <span class="metric-label">Better Reliability</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Kubernetes</span>
-                            <span class="tech-tag">Stripe</span>
-                        </div>
-                        <a href="#" class="project-link">View Architecture →</a>
-                    </div>
-                </div>
-                
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon">🤖</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI-Driven Process Automation</h3>
-                        <p class="project-description">
-                            Developed machine learning pipeline that automated 70% of manual data processing tasks. 
-                            Led cross-functional team of 8 engineers, delivered project 20% under budget.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <span class="metric-value">$800K</span>
-                                <span class="metric-label">Annual Savings</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">70%</span>
-                                <span class="metric-label">Task Automation</span>
-                            </div>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Azure</span>
-                        </div>
-                        <a href="#" class="project-link">View Implementation →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  
 
 <!-- CV/Experience Section -->
 <section id="experience" class="section">
@@ -1020,53 +1078,78 @@
 
         <!-- Professional Experience -->
         <div class="cv-section fade-in">
-            <h3 class="cv-section-title">Professional Experience</h3>
+            <div class="cv-section-header">
+                <div class="cv-section-icon">💼</div>
+                <h3 class="cv-section-title">Professional Experience</h3>
+            </div>
             
             <div class="experience-timeline">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-company">Current Company</div>
-                        <div class="experience-period">2022 - Present</div>
-                    </div>
-                    <div class="experience-role">Senior Data Analytics Manager</div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Lead a team of 8 data engineers and analysts to deliver enterprise-grade analytics solutions</li>
-                            <li>Architected scalable data pipelines processing 10TB+ daily, improving processing speed by 60%</li>
-                            <li>Implemented machine learning models that increased customer retention by 25%</li>
-                            <li>Managed $2.1M analytics budget and delivered projects 15% under budget consistently</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-company">Previous Company</div>
-                        <div class="experience-period">2020 - 2022</div>
-                    </div>
-                    <div class="experience-role">Data Engineering Lead</div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Built and maintained data infrastructure supporting 500+ business users</li>
-                            <li>Developed real-time dashboards reducing executive decision-making time by 40%</li>
-                            <li>Led migration to cloud-based analytics platform, saving $800K annually</li>
-                            <li>Mentored junior developers and established data governance best practices</li>
-                        </ul>
+                <div class="experience-item experience-current">
+                    <div class="experience-badge">Current</div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <div class="experience-company">Current Company</div>
+                            <div class="experience-period">2022 - Present</div>
+                        </div>
+                        <div class="experience-role">Senior Data Analytics Manager</div>
+                        <div class="experience-metrics">
+                            <div class="metric-tag">8 Team Members</div>
+                            <div class="metric-tag">10TB+ Daily</div>
+                            <div class="metric-tag">$2.1M Budget</div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Lead a team of 8 data engineers and analysts to deliver enterprise-grade analytics solutions</li>
+                                <li>Architected scalable data pipelines processing 10TB+ daily, improving processing speed by 60%</li>
+                                <li>Implemented machine learning models that increased customer retention by 25%</li>
+                                <li>Managed $2.1M analytics budget and delivered projects 15% under budget consistently</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-company">Earlier Company</div>
-                        <div class="experience-period">2018 - 2020</div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <div class="experience-company">Previous Company</div>
+                            <div class="experience-period">2020 - 2022</div>
+                        </div>
+                        <div class="experience-role">Data Engineering Lead</div>
+                        <div class="experience-metrics">
+                            <div class="metric-tag">500+ Users</div>
+                            <div class="metric-tag">40% Faster</div>
+                            <div class="metric-tag">$800K Saved</div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Built and maintained data infrastructure supporting 500+ business users</li>
+                                <li>Developed real-time dashboards reducing executive decision-making time by 40%</li>
+                                <li>Led migration to cloud-based analytics platform, saving $800K annually</li>
+                                <li>Mentored junior developers and established data governance best practices</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="experience-role">Senior Data Analyst</div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Designed and implemented automated reporting systems for C-level executives</li>
-                            <li>Created predictive models that improved marketing ROI by 35%</li>
-                            <li>Collaborated with cross-functional teams to deliver data-driven insights</li>
-                        </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <div class="experience-company">Earlier Company</div>
+                            <div class="experience-period">2018 - 2020</div>
+                        </div>
+                        <div class="experience-role">Senior Data Analyst</div>
+                        <div class="experience-metrics">
+                            <div class="metric-tag">C-Level Reports</div>
+                            <div class="metric-tag">35% ROI Boost</div>
+                            <div class="metric-tag">Cross-Functional</div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Designed and implemented automated reporting systems for C-level executives</li>
+                                <li>Created predictive models that improved marketing ROI by 35%</li>
+                                <li>Collaborated with cross-functional teams to deliver data-driven insights</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1074,26 +1157,45 @@
 
         <!-- Education -->
         <div class="cv-section fade-in">
-            <h3 class="cv-section-title">Education</h3>
+            <div class="cv-section-header">
+                <div class="cv-section-icon">🎓</div>
+                <h3 class="cv-section-title">Education</h3>
+            </div>
             
             <div class="education-grid">
-                <div class="education-item">
-                    <div class="education-degree">Master of Science in Data Science</div>
-                    <div class="education-school">University Name</div>
-                    <div class="education-period">2016 - 2018</div>
-                    <div class="education-details">
-                        <p>Specialized in Machine Learning and Statistical Analysis</p>
-                        <p>Thesis: "Predictive Analytics in Enterprise Environments"</p>
+                <div class="education-item education-masters">
+                    <div class="education-badge">Masters</div>
+                    <div class="education-content">
+                        <div class="education-degree">Master of Science in Data Science</div>
+                        <div class="education-school">University Name</div>
+                        <div class="education-period">2016 - 2018</div>
+                        <div class="education-highlights">
+                            <div class="highlight-tag">Machine Learning</div>
+                            <div class="highlight-tag">Statistical Analysis</div>
+                            <div class="highlight-tag">Predictive Analytics</div>
+                        </div>
+                        <div class="education-details">
+                            <p>Specialized in Machine Learning and Statistical Analysis</p>
+                            <p>Thesis: "Predictive Analytics in Enterprise Environments"</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="education-item">
-                    <div class="education-degree">Bachelor of Science in Computer Science</div>
-                    <div class="education-school">University Name</div>
-                    <div class="education-period">2012 - 2016</div>
-                    <div class="education-details">
-                        <p>Magna Cum Laude, GPA: 3.8/4.0</p>
-                        <p>Focus: Database Systems and Software Engineering</p>
+                <div class="education-item education-bachelors">
+                    <div class="education-badge">Bachelors</div>
+                    <div class="education-content">
+                        <div class="education-degree">Bachelor of Science in Computer Science</div>
+                        <div class="education-school">University Name</div>
+                        <div class="education-period">2012 - 2016</div>
+                        <div class="education-highlights">
+                            <div class="highlight-tag">Magna Cum Laude</div>
+                            <div class="highlight-tag">GPA: 3.8/4.0</div>
+                            <div class="highlight-tag">Database Systems</div>
+                        </div>
+                        <div class="education-details">
+                            <p>Magna Cum Laude, GPA: 3.8/4.0</p>
+                            <p>Focus: Database Systems and Software Engineering</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1103,52 +1205,100 @@
 
         <!-- Certifications -->
         <div class="cv-section fade-in">
-            <h3 class="cv-section-title">Certifications & Awards</h3>
+            <div class="cv-section-header">
+                <div class="cv-section-icon">🏆</div>
+                <h3 class="cv-section-title">Certifications & Awards</h3>
+            </div>
             
             <div class="certifications-grid">
-                <div class="certification-item">
-                    <div class="cert-icon">🏆</div>
+                <div class="certification-item cert-premium">
+                    <div class="cert-badge">Premium</div>
+                    <div class="cert-icon">☁️</div>
                     <div class="cert-content">
                         <div class="cert-name">AWS Certified Solutions Architect</div>
                         <div class="cert-org">Amazon Web Services</div>
                         <div class="cert-date">2023</div>
+                        <div class="cert-description">Advanced cloud architecture and design principles</div>
                     </div>
                 </div>
 
-                <div class="certification-item">
+                <div class="certification-item cert-professional">
+                    <div class="cert-badge">Professional</div>
                     <div class="cert-icon">📊</div>
                     <div class="cert-content">
                         <div class="cert-name">Tableau Desktop Certified Professional</div>
                         <div class="cert-org">Tableau</div>
                         <div class="cert-date">2022</div>
+                        <div class="cert-description">Advanced data visualization and analytics</div>
                     </div>
                 </div>
 
-                <div class="certification-item">
+                <div class="certification-item cert-award">
+                    <div class="cert-badge">Award</div>
                     <div class="cert-icon">🎯</div>
                     <div class="cert-content">
                         <div class="cert-name">Data Science Excellence Award</div>
                         <div class="cert-org">Current Company</div>
                         <div class="cert-date">2023</div>
+                        <div class="cert-description">Recognition for outstanding contributions to data science</div>
                     </div>
                 </div>
 
-                <div class="certification-item">
+                <div class="certification-item cert-specialization">
+                    <div class="cert-badge">Specialization</div>
                     <div class="cert-icon">🔬</div>
                     <div class="cert-content">
                         <div class="cert-name">Machine Learning Specialization</div>
                         <div class="cert-org">Stanford University (Coursera)</div>
                         <div class="cert-date">2021</div>
+                        <div class="cert-description">Comprehensive ML algorithms and applications</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Download CV Button -->
-        <div class="cv-download fade-in">
-            <a href="#" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
-                📄 Download Full CV (PDF)
-            </a>
+        <!-- Download CV Section -->
+        <div class="cv-download-section fade-in">
+            <div class="download-header">
+                <h3 class="download-title">Download My Resume</h3>
+                <p class="download-description">Choose the format that works best for your needs</p>
+            </div>
+            
+            <div class="download-options">
+                <div class="download-option download-pdf">
+                    <div class="download-icon">📄</div>
+                    <div class="download-content">
+                        <h4>Full CV (PDF)</h4>
+                        <p>Comprehensive resume with full formatting, charts, and visual elements</p>
+                        <ul class="download-features">
+                            <li>✓ Professional formatting</li>
+                            <li>✓ Visual charts & metrics</li>
+                            <li>✓ Complete experience details</li>
+                            <li>✓ Print-ready design</li>
+                        </ul>
+                        <button class="btn btn-primary download-btn" onclick="downloadPDF()">
+                            📄 Download PDF
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="download-option download-text">
+                    <div class="download-icon">📝</div>
+                    <div class="download-content">
+                        <h4>Basic CV (Text)</h4>
+                        <p>Clean text format optimized for ATS systems and quick scanning</p>
+                        <ul class="download-features">
+                            <li>✓ ATS-friendly format</li>
+                            <li>✓ Plain text version</li>
+                            <li>✓ Easy to copy/paste</li>
+                            <li>✓ Universal compatibility</li>
+                        </ul>
+                        <button class="btn btn-secondary download-btn" onclick="downloadText()">
+                            📝 Download Text
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -1159,7 +1309,7 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-eyebrow">Why Wil?</div>
-                <h2 class="section-title">The Innovation Curve Can Benefit From Someone with Experience</h2>
+                <h2 class="section-title">The innovation curve can benefit from my analytical mindset, out-of-the-box thinking, and tagging data quality, accuracy, and compliance --- which is the foundation of AI data ML and LLM</h2>
                 <p class="section-description">
                     Passionate about creating innovative solutions that drive business growth and deliver measurable impact
                 </p>
@@ -1281,6 +1431,26 @@
     </footer>
 
     <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+            mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
@@ -1331,10 +1501,29 @@
             
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
+            const formData = new FormData(this);
+            
+            // Basic validation
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
             
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
+            // Simulate form submission
             setTimeout(() => {
                 alert('Thank you for your message! I\'ll get back to you within 24 hours.');
                 this.reset();
@@ -1353,5 +1542,9 @@
             }, 100);
         });
     </script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="logic.js"></script>
+
 </body>
 </html>
