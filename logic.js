@@ -410,136 +410,228 @@ function generatePDFContent() {
         }
         
         const doc = new jsPDF();
-    
-    // Set up fonts and styling
-    doc.setFont('helvetica');
-    doc.setFontSize(24);
-    doc.setTextColor(99, 102, 241); // Primary color
-    
-    // Header
-    doc.text('Wil Chinchilla', 20, 30);
-    doc.setFontSize(16);
-    doc.setTextColor(71, 85, 105);
-    doc.text('Senior Data Analytics Manager', 20, 40);
-    
-    // Contact Information
-    doc.setFontSize(12);
-    doc.setTextColor(30, 41, 59);
-    doc.text('Email: wil.chinchilla@professional.com', 20, 55);
-    doc.text('LinkedIn: linkedin.com/in/wilchinchilla', 20, 62);
-    doc.text('Location: San Diego, California', 20, 69);
-    
-    // Professional Summary
-    doc.setFontSize(14);
-    doc.setTextColor(99, 102, 241);
-    doc.text('PROFESSIONAL SUMMARY', 20, 85);
-    doc.setFontSize(10);
-    doc.setTextColor(30, 41, 59);
-    const summary = 'Senior Data Analytics Manager with 8+ years of experience leading enterprise analytics implementations across 12+ industries. Expert in data architecture, team leadership, and turning complex data challenges into business solutions.';
-    doc.setFontSize(10);
-    const summaryLines = doc.splitTextToSize(summary, 170);
-    doc.text(summaryLines, 20, 95);
-    
-    // Professional Experience
-    let yPosition = 120;
-    doc.setFontSize(14);
-    doc.setTextColor(99, 102, 241);
-    doc.text('PROFESSIONAL EXPERIENCE', 20, yPosition);
-    yPosition += 15;
-    
-    // Current Company
-    doc.setFontSize(12);
-    doc.setTextColor(30, 41, 59);
-    doc.setFont('helvetica', 'bold');
-    doc.text('Current Company (2022 - Present)', 20, yPosition);
-    yPosition += 8;
-    doc.setFont('helvetica', 'normal');
-    doc.text('Senior Data Analytics Manager', 20, yPosition);
-    yPosition += 12;
-    
-    const currentExp = [
-        '• Lead a team of 8 data engineers and analysts to deliver enterprise-grade analytics solutions',
-        '• Architected scalable data pipelines processing 10TB+ daily, improving processing speed by 60%',
-        '• Implemented machine learning models that increased customer retention by 25%',
-        '• Managed $2.1M analytics budget and delivered projects 15% under budget consistently'
-    ];
-    
-    currentExp.forEach(item => {
-        const lines = doc.splitTextToSize(item, 170);
-        doc.text(lines, 20, yPosition);
-        yPosition += lines.length * 5 + 2;
-    });
-    
-    // Previous Company
-    yPosition += 5;
-    doc.setFont('helvetica', 'bold');
-    doc.text('Previous Company (2020 - 2022)', 20, yPosition);
-    yPosition += 8;
-    doc.setFont('helvetica', 'normal');
-    doc.text('Data Engineering Lead', 20, yPosition);
-    yPosition += 12;
-    
-    const prevExp = [
-        '• Built and maintained data infrastructure supporting 500+ business users',
-        '• Developed real-time dashboards reducing executive decision-making time by 40%',
-        '• Led migration to cloud-based analytics platform, saving $800K annually',
-        '• Mentored junior developers and established data governance best practices'
-    ];
-    
-    prevExp.forEach(item => {
-        const lines = doc.splitTextToSize(item, 170);
-        doc.text(lines, 20, yPosition);
-        yPosition += lines.length * 5 + 2;
-    });
-    
-    // Education
-    yPosition += 10;
-    doc.setFontSize(14);
-    doc.setTextColor(99, 102, 241);
-    doc.text('EDUCATION', 20, yPosition);
-    yPosition += 15;
-    
-    doc.setFontSize(12);
-    doc.setTextColor(30, 41, 59);
-    doc.setFont('helvetica', 'bold');
-    doc.text('Master of Science in Data Science', 20, yPosition);
-    yPosition += 8;
-    doc.setFont('helvetica', 'normal');
-    doc.text('University Name (2016 - 2018)', 20, yPosition);
-    yPosition += 8;
-    doc.text('Specialized in Machine Learning and Statistical Analysis', 20, yPosition);
-    yPosition += 12;
-    
-    doc.setFont('helvetica', 'bold');
-    doc.text('Bachelor of Science in Computer Science', 20, yPosition);
-    yPosition += 8;
-    doc.setFont('helvetica', 'normal');
-    doc.text('University Name (2012 - 2016)', 20, yPosition);
-    yPosition += 8;
-    doc.text('Magna Cum Laude, GPA: 3.8/4.0', 20, yPosition);
-    
-    // Technical Skills
-    yPosition += 15;
-    doc.setFontSize(14);
-    doc.setTextColor(99, 102, 241);
-    doc.text('TECHNICAL SKILLS', 20, yPosition);
-    yPosition += 15;
-    
-    doc.setFontSize(10);
-    doc.setTextColor(30, 41, 59);
-    const skills = [
-        'Programming Languages: JavaScript (React, Node.js, ES6+), HTML, CSS, SQL, Python, R',
-        'Analytics Tools: Adobe Analytics, Google Analytics, Customer Journey Analytics, Power BI, Tableau',
-        'Cloud Platforms: AWS, Azure, Snowflake, Sevalla',
-        'Data Governance: Cookie Compliance, Data Privacy, Data QA, Analytics Audit'
-    ];
-    
-    skills.forEach(skill => {
-        const lines = doc.splitTextToSize(skill, 170);
-        doc.text(lines, 20, yPosition);
-        yPosition += lines.length * 5 + 3;
-    });
-    
+        
+        // Set up fonts and styling
+        doc.setFont('helvetica');
+        doc.setFontSize(24);
+        doc.setTextColor(0, 0, 0); // Black for professional look
+        
+        // Header
+        doc.text('Wilbert (Wil) Chinchilla', 20, 30);
+        doc.setFontSize(16);
+        doc.setTextColor(100, 100, 100);
+        doc.text('Senior Data Analytics Manager', 20, 40);
+        
+        // Contact Information
+        doc.setFontSize(10);
+        doc.setTextColor(0, 0, 0);
+        doc.text('Email: wil.chinchilla@professional.com', 20, 55);
+        doc.text('LinkedIn: linkedin.com/in/wilchinchilla', 20, 62);
+        doc.text('Location: San Diego, California', 20, 69);
+        
+        // Professional Summary
+        doc.setFontSize(14);
+        doc.setTextColor(0, 0, 0);
+        doc.setFont('helvetica', 'bold');
+        doc.text('PROFESSIONAL SUMMARY', 20, 85);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(10);
+        const summary = 'Senior Data Analytics Manager with 8+ years of experience leading enterprise analytics implementations across 12+ industries. Expert in data architecture, team leadership, and turning complex data challenges into business solutions.';
+        const summaryLines = doc.splitTextToSize(summary, 170);
+        doc.text(summaryLines, 20, 95);
+        
+        // Key Achievements Table
+        let yPosition = 115;
+        doc.setFontSize(14);
+        doc.setFont('helvetica', 'bold');
+        doc.text('KEY ACHIEVEMENTS', 20, yPosition);
+        yPosition += 15;
+        
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(10);
+        const achievements = [
+            '• Led teams of 8+ data engineers and analysts',
+            '• Processed 10TB+ daily data with 60% speed improvement',
+            '• Increased customer retention by 25% through ML models',
+            '• Managed $2.1M analytics budget with 15% under-budget delivery',
+            '• Supported 500+ business users with real-time dashboards',
+            '• Saved $800K annually through cloud migration',
+            '• Improved marketing ROI by 35% with predictive models'
+        ];
+        
+        achievements.forEach(item => {
+            const lines = doc.splitTextToSize(item, 170);
+            doc.text(lines, 20, yPosition);
+            yPosition += lines.length * 5 + 2;
+        });
+        
+        // Professional Experience
+        yPosition += 10;
+        doc.setFontSize(14);
+        doc.setFont('helvetica', 'bold');
+        doc.text('PROFESSIONAL EXPERIENCE', 20, yPosition);
+        yPosition += 15;
+        
+        // Current Company
+        doc.setFontSize(12);
+        doc.setFont('helvetica', 'bold');
+        doc.text('Current Company (2022 - Present)', 20, yPosition);
+        yPosition += 8;
+        doc.setFont('helvetica', 'normal');
+        doc.text('Senior Data Analytics Manager', 20, yPosition);
+        yPosition += 12;
+        
+        const currentExp = [
+            '• Lead a team of 8 data engineers and analysts to deliver enterprise-grade analytics solutions',
+            '• Architected scalable data pipelines processing 10TB+ daily, improving processing speed by 60%',
+            '• Implemented machine learning models that increased customer retention by 25%',
+            '• Managed $2.1M analytics budget and delivered projects 15% under budget consistently'
+        ];
+        
+        currentExp.forEach(item => {
+            const lines = doc.splitTextToSize(item, 170);
+            doc.text(lines, 20, yPosition);
+            yPosition += lines.length * 5 + 2;
+        });
+        
+        // Previous Company
+        yPosition += 5;
+        doc.setFont('helvetica', 'bold');
+        doc.text('Previous Company (2020 - 2022)', 20, yPosition);
+        yPosition += 8;
+        doc.setFont('helvetica', 'normal');
+        doc.text('Data Engineering Lead', 20, yPosition);
+        yPosition += 12;
+        
+        const prevExp = [
+            '• Built and maintained data infrastructure supporting 500+ business users',
+            '• Developed real-time dashboards reducing executive decision-making time by 40%',
+            '• Led migration to cloud-based analytics platform, saving $800K annually',
+            '• Mentored junior developers and established data governance best practices'
+        ];
+        
+        prevExp.forEach(item => {
+            const lines = doc.splitTextToSize(item, 170);
+            doc.text(lines, 20, yPosition);
+            yPosition += lines.length * 5 + 2;
+        });
+        
+        // Earlier Company
+        yPosition += 5;
+        doc.setFont('helvetica', 'bold');
+        doc.text('Earlier Company (2018 - 2020)', 20, yPosition);
+        yPosition += 8;
+        doc.setFont('helvetica', 'normal');
+        doc.text('Senior Data Analyst', 20, yPosition);
+        yPosition += 12;
+        
+        const earlierExp = [
+            '• Designed and implemented automated reporting systems for C-level executives',
+            '• Created predictive models that improved marketing ROI by 35%',
+            '• Collaborated with cross-functional teams to deliver data-driven insights'
+        ];
+        
+        earlierExp.forEach(item => {
+            const lines = doc.splitTextToSize(item, 170);
+            doc.text(lines, 20, yPosition);
+            yPosition += lines.length * 5 + 2;
+        });
+        
+        // Industry Experience Table
+        yPosition += 10;
+        doc.setFontSize(14);
+        doc.setFont('helvetica', 'bold');
+        doc.text('INDUSTRY EXPERIENCE', 20, yPosition);
+        yPosition += 15;
+        
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(10);
+        const industries = [
+            'Worked across 12+ industry verticals including:',
+            '• Entertainment & Media (6 projects, 4 led)',
+            '• Healthcare & Medical (2 projects, 2 led)',
+            '• Technology & Software (2 projects, 2 led)',
+            '• Consumer Goods, Manufacturing, Financial Services (2 projects each)',
+            '• Sports, Pharmaceutical, Internet Infrastructure (1 project each)',
+            '• Media & Marketing, Retail Technology, Travel & Hospitality (1 project each)'
+        ];
+        
+        industries.forEach(item => {
+            const lines = doc.splitTextToSize(item, 170);
+            doc.text(lines, 20, yPosition);
+            yPosition += lines.length * 5 + 2;
+        });
+        
+        // Technical Skills
+        yPosition += 10;
+        doc.setFontSize(14);
+        doc.setFont('helvetica', 'bold');
+        doc.text('TECHNICAL SKILLS', 20, yPosition);
+        yPosition += 15;
+        
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(10);
+        const skills = [
+            'Programming Languages: JavaScript (React, Node.js, ES6+), HTML, CSS, SQL, Python, R',
+            'Analytics Tools: Adobe Analytics, Google Analytics, Customer Journey Analytics, Power BI, Tableau',
+            'Cloud Platforms: AWS, Azure, Snowflake, Sevalla',
+            'Data Governance: Cookie Compliance, Data Privacy, Data QA, Analytics Audit',
+            'Leadership: Cross-Functional Team Management, Stakeholder Communication, Strategic Planning'
+        ];
+        
+        skills.forEach(skill => {
+            const lines = doc.splitTextToSize(skill, 170);
+            doc.text(lines, 20, yPosition);
+            yPosition += lines.length * 5 + 3;
+        });
+        
+        // Education
+        yPosition += 10;
+        doc.setFontSize(14);
+        doc.setFont('helvetica', 'bold');
+        doc.text('EDUCATION', 20, yPosition);
+        yPosition += 15;
+        
+        doc.setFontSize(12);
+        doc.setFont('helvetica', 'bold');
+        doc.text('Master of Science in Data Science', 20, yPosition);
+        yPosition += 8;
+        doc.setFont('helvetica', 'normal');
+        doc.text('University Name (2016 - 2018)', 20, yPosition);
+        yPosition += 8;
+        doc.text('Specialized in Machine Learning and Statistical Analysis', 20, yPosition);
+        yPosition += 12;
+        
+        doc.setFont('helvetica', 'bold');
+        doc.text('Bachelor of Science in Computer Science', 20, yPosition);
+        yPosition += 8;
+        doc.setFont('helvetica', 'normal');
+        doc.text('University Name (2012 - 2016)', 20, yPosition);
+        yPosition += 8;
+        doc.text('Magna Cum Laude, GPA: 3.8/4.0', 20, yPosition);
+        
+        // Certifications
+        yPosition += 15;
+        doc.setFontSize(14);
+        doc.setFont('helvetica', 'bold');
+        doc.text('CERTIFICATIONS & AWARDS', 20, yPosition);
+        yPosition += 15;
+        
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(10);
+        const certs = [
+            '• AWS Certified Solutions Architect (Amazon Web Services, 2023)',
+            '• Tableau Desktop Certified Professional (Tableau, 2022)',
+            '• Data Science Excellence Award (Current Company, 2023)',
+            '• Machine Learning Specialization (Stanford University, 2021)'
+        ];
+        
+        certs.forEach(cert => {
+            const lines = doc.splitTextToSize(cert, 170);
+            doc.text(lines, 20, yPosition);
+            yPosition += lines.length * 5 + 2;
+        });
+        
         // Generate PDF blob
         const pdfBlob = doc.output('blob');
         return URL.createObjectURL(pdfBlob);
