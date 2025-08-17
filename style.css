@@ -2104,21 +2104,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cert-icon {
-    font-size: 2.5rem;
     width: 60px;
     height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--gradient-primary);
-    border-radius: 50%;
+    background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat;
     flex-shrink: 0;
     margin-bottom: 1rem;
 }
 
-.cert-professional .cert-icon {
-    background: var(--gradient-secondary);
+.cert-icon.cert-badge-1 {
+    background-image: url('5f20f252-2812-11f0-9883-42010a40002a_badge.png');
 }
+
+.cert-icon.cert-badge-2 {
+    background-image: url('c78e4333-8983-4f12-ae4d-db5fb68751fc_badge.png');
+}
+
+
 
 .cert-award .cert-icon {
     background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
@@ -2404,7 +2407,6 @@ h1, h2, h3, h4, h5, h6 {
     .cert-icon {
         width: 50px;
         height: 50px;
-        font-size: 2rem;
     }
     
     .skills-progress-grid {
