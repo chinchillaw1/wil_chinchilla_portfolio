@@ -14,6 +14,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Wil Chinchilla - Data and Analytics Pro">
     <meta name="twitter:description" content="Senior Data Analytics Manager with 8+ years of experience leading enterprise analytics implementations.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -68,7 +69,11 @@
                     </p>
 
                     <!-- Your existing project cards -->
-                    <h2 class="section-title">Major Career Wins</h2>
+                    <div class="career-wins-header">
+                        <div class="career-wins-eyebrow">🏆</div>
+                        <h2 class="career-wins-title">Major Career Wins</h2>
+                        <div class="career-wins-subtitle">Transformative Projects That Drive Business Impact</div>
+                    </div>
         <div class="projects-grid">
             <div class="project-card fade-in">
                 <div class="project-header">
@@ -208,14 +213,13 @@
     <div class="container">
         <div class="section-header">
             <div class="section-eyebrow">About Wil</div>
-            <h2 class="section-title">Strategic Thinker, Collaborative Leader</h2>
+            <h2 class="section-title">INTJ - Strategic Thinker, Collaborative Leader</h2>
                     <!-- MBTI Integration -->
         <div class="mbti-section fade-in">
             <img src="architect-desktop2.svg" alt="INTJ Architect Personality Type">
             <div class="mbti-content">
-                <div class="mbti-badge">
-                    <span class="mbti-type">INTJ</span>
-                    <span class="mbti-label">The Architect</span>
+                <div class="mbti-label">
+                The Architect
                 </div>
                 <p class="mbti-description">
                     "Architects are imaginative and strategic thinkers, with a plan for everything." 
@@ -1401,19 +1405,19 @@
                 <form class="contact-form fade-in">
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
                     </div>
                     <div class="form-group">
                         <label for="company">Company</label>
-                        <input type="text" id="company" name="company">
+                        <input type="text" id="company" name="company" autocomplete="organization">
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+                        <textarea id="message" name="message" placeholder="Tell me about your project or opportunity..." autocomplete="off" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">
                         Send Message
@@ -1543,8 +1547,9 @@
         });
     </script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="logic.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="logic.js"></script>
 
 </body>
 </html>

@@ -1,3 +1,9 @@
+// Check if jsPDF is loaded
+console.log('jsPDF library check:', typeof window.jsPDF !== 'undefined');
+if (typeof window.jsPDF !== 'undefined') {
+    console.log('jsPDF object:', window.jsPDF);
+}
+
 // Simple modular progress bar animation
 function animateBar(selector, percentage) {
     const bar = document.querySelector(selector);
@@ -81,10 +87,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 datasets: [{
                     label: 'Projects',
                     data: totalProjects,
-                    backgroundColor: industries.map((_, i) => projectsLed[i] > 0 ? primaryGradient : secondaryGradient),
-                    borderColor: industries.map((_, i) => projectsLed[i] > 0 ? '#6366f1' : '#3b82f6'),
-                    borderWidth: 2,
-                    borderRadius: 8,
+                    backgroundColor: industries.map((_, i) => projectsLed[i] > 0 ? '#6366f1' : '#3b82f6'),
+                    borderWidth: 0,
+                    borderRadius: 6,
                     borderSkipped: false,
                 }]
             },
@@ -99,15 +104,15 @@ document.addEventListener('DOMContentLoaded', function() {
                                 return [
                                     {
                                         text: '👑 Leadership Projects',
-                                        fillStyle: primaryGradient,
+                                        fillStyle: '#6366f1',
                                         strokeStyle: '#6366f1',
-                                        lineWidth: 2
+                                        lineWidth: 0
                                     },
                                     {
                                         text: '🔧 Support Projects', 
-                                        fillStyle: secondaryGradient,
+                                        fillStyle: '#3b82f6',
                                         strokeStyle: '#3b82f6',
-                                        lineWidth: 2
+                                        lineWidth: 0
                                     }
                                 ];
                             },
@@ -319,20 +324,39 @@ function downloadPDF() {
     btn.textContent = '📄 Generating PDF...';
     btn.disabled = true;
     
-    // Simulate PDF generation (replace with actual PDF generation logic)
+    // Generate PDF
     setTimeout(() => {
-        // Create a link to download the PDF
-        const link = document.createElement('a');
-        link.href = generatePDFContent();
-        link.download = 'Wil_Chinchilla_CV.pdf';
-        link.click();
+        console.log('Starting PDF generation...');
+        console.log('jsPDF available:', typeof window.jsPDF !== 'undefined');
         
-        // Reset button
-        btn.textContent = originalText;
-        btn.disabled = false;
+        const pdfUrl = generatePDFContent();
         
-        // Show success message
-        showDownloadSuccess('PDF downloaded successfully!');
+        if (pdfUrl) {
+            console.log('PDF generated successfully');
+            // Create a link to download the PDF
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'Wil_Chinchilla_CV.pdf';
+            link.click();
+            
+            // Clean up the blob URL after a short delay
+            setTimeout(() => {
+                URL.revokeObjectURL(pdfUrl);
+            }, 1000);
+            
+            // Reset button
+            btn.textContent = originalText;
+            btn.disabled = false;
+            
+            // Show success message
+            showDownloadSuccess('PDF downloaded successfully!');
+        } else {
+            console.error('PDF generation failed');
+            // Fallback if PDF generation fails
+            btn.textContent = originalText;
+            btn.disabled = false;
+            showDownloadSuccess('PDF generation failed. Please try again.');
+        }
     }, 2000);
 }
 
@@ -367,79 +391,171 @@ function downloadText() {
 }
 
 function generatePDFContent() {
-    // This would typically use a library like jsPDF or html2pdf
-    // For now, we'll create a data URL with a simple PDF-like structure
-    const pdfContent = `
-        Wil Chinchilla - Senior Data Analytics Manager
+    // Check if jsPDF is available
+    if (typeof window.jsPDF === 'undefined') {
+        console.error('jsPDF library not loaded');
+        return null;
+    }
+
+    try {
+        // Try different ways to access jsPDF
+        let jsPDF;
+        if (window.jsPDF && window.jsPDF.jsPDF) {
+            jsPDF = window.jsPDF.jsPDF;
+        } else if (window.jsPDF) {
+            jsPDF = window.jsPDF;
+        } else {
+            console.error('jsPDF not accessible');
+            return null;
+        }
         
-        CONTACT INFORMATION
-        Email: wil.chinchilla@professional.com
-        LinkedIn: linkedin.com/in/wilchinchilla
-        Location: San Diego, California
-        
-        PROFESSIONAL SUMMARY
-        Senior Data Analytics Manager with 8+ years of experience leading enterprise analytics implementations across 12+ industries. Expert in data architecture, team leadership, and turning complex data challenges into business solutions.
-        
-        PROFESSIONAL EXPERIENCE
-        
-        Current Company (2022 - Present)
-        Senior Data Analytics Manager
-        • Lead a team of 8 data engineers and analysts to deliver enterprise-grade analytics solutions
-        • Architected scalable data pipelines processing 10TB+ daily, improving processing speed by 60%
-        • Implemented machine learning models that increased customer retention by 25%
-        • Managed $2.1M analytics budget and delivered projects 15% under budget consistently
-        
-        Previous Company (2020 - 2022)
-        Data Engineering Lead
-        • Built and maintained data infrastructure supporting 500+ business users
-        • Developed real-time dashboards reducing executive decision-making time by 40%
-        • Led migration to cloud-based analytics platform, saving $800K annually
-        • Mentored junior developers and established data governance best practices
-        
-        Earlier Company (2018 - 2020)
-        Senior Data Analyst
-        • Designed and implemented automated reporting systems for C-level executives
-        • Created predictive models that improved marketing ROI by 35%
-        • Collaborated with cross-functional teams to deliver data-driven insights
-        
-        EDUCATION
-        
-        Master of Science in Data Science
-        University Name (2016 - 2018)
-        Specialized in Machine Learning and Statistical Analysis
-        Thesis: "Predictive Analytics in Enterprise Environments"
-        
-        Bachelor of Science in Computer Science
-        University Name (2012 - 2016)
-        Magna Cum Laude, GPA: 3.8/4.0
-        Focus: Database Systems and Software Engineering
-        
-        CERTIFICATIONS & AWARDS
-        
-        • AWS Certified Solutions Architect (Amazon Web Services, 2023)
-        • Tableau Desktop Certified Professional (Tableau, 2022)
-        • Data Science Excellence Award (Current Company, 2023)
-        • Machine Learning Specialization (Stanford University, 2021)
-        
-        TECHNICAL SKILLS
-        
-        Programming Languages: JavaScript (React, Node.js, ES6+), HTML, CSS, SQL, Python, R
-        Analytics Tools: Adobe Analytics, Google Analytics, Customer Journey Analytics, Power BI, Tableau
-        Cloud Platforms: AWS, Azure, Snowflake, Sevalla
-        Data Governance: Cookie Compliance, Data Privacy, Data QA, Analytics Audit
-        
-        LEADERSHIP & SOFT SKILLS
-        
-        • Analytics Project Leadership
-        • Cross-Functional Team Management
-        • Stakeholder Communication
-        • Strategic Planning & Roadmapping
-        • Agile/Scrum Methodology
-        • Account Management & Billing
-    `;
+        const doc = new jsPDF();
     
-    // Convert to data URL (simplified - in real implementation, use proper PDF library)
-    return 'data:text/plain;charset=utf-8,' + encodeURIComponent(pdfContent);
+    // Set up fonts and styling
+    doc.setFont('helvetica');
+    doc.setFontSize(24);
+    doc.setTextColor(99, 102, 241); // Primary color
+    
+    // Header
+    doc.text('Wil Chinchilla', 20, 30);
+    doc.setFontSize(16);
+    doc.setTextColor(71, 85, 105);
+    doc.text('Senior Data Analytics Manager', 20, 40);
+    
+    // Contact Information
+    doc.setFontSize(12);
+    doc.setTextColor(30, 41, 59);
+    doc.text('Email: wil.chinchilla@professional.com', 20, 55);
+    doc.text('LinkedIn: linkedin.com/in/wilchinchilla', 20, 62);
+    doc.text('Location: San Diego, California', 20, 69);
+    
+    // Professional Summary
+    doc.setFontSize(14);
+    doc.setTextColor(99, 102, 241);
+    doc.text('PROFESSIONAL SUMMARY', 20, 85);
+    doc.setFontSize(10);
+    doc.setTextColor(30, 41, 59);
+    const summary = 'Senior Data Analytics Manager with 8+ years of experience leading enterprise analytics implementations across 12+ industries. Expert in data architecture, team leadership, and turning complex data challenges into business solutions.';
+    doc.setFontSize(10);
+    const summaryLines = doc.splitTextToSize(summary, 170);
+    doc.text(summaryLines, 20, 95);
+    
+    // Professional Experience
+    let yPosition = 120;
+    doc.setFontSize(14);
+    doc.setTextColor(99, 102, 241);
+    doc.text('PROFESSIONAL EXPERIENCE', 20, yPosition);
+    yPosition += 15;
+    
+    // Current Company
+    doc.setFontSize(12);
+    doc.setTextColor(30, 41, 59);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Current Company (2022 - Present)', 20, yPosition);
+    yPosition += 8;
+    doc.setFont('helvetica', 'normal');
+    doc.text('Senior Data Analytics Manager', 20, yPosition);
+    yPosition += 12;
+    
+    const currentExp = [
+        '• Lead a team of 8 data engineers and analysts to deliver enterprise-grade analytics solutions',
+        '• Architected scalable data pipelines processing 10TB+ daily, improving processing speed by 60%',
+        '• Implemented machine learning models that increased customer retention by 25%',
+        '• Managed $2.1M analytics budget and delivered projects 15% under budget consistently'
+    ];
+    
+    currentExp.forEach(item => {
+        const lines = doc.splitTextToSize(item, 170);
+        doc.text(lines, 20, yPosition);
+        yPosition += lines.length * 5 + 2;
+    });
+    
+    // Previous Company
+    yPosition += 5;
+    doc.setFont('helvetica', 'bold');
+    doc.text('Previous Company (2020 - 2022)', 20, yPosition);
+    yPosition += 8;
+    doc.setFont('helvetica', 'normal');
+    doc.text('Data Engineering Lead', 20, yPosition);
+    yPosition += 12;
+    
+    const prevExp = [
+        '• Built and maintained data infrastructure supporting 500+ business users',
+        '• Developed real-time dashboards reducing executive decision-making time by 40%',
+        '• Led migration to cloud-based analytics platform, saving $800K annually',
+        '• Mentored junior developers and established data governance best practices'
+    ];
+    
+    prevExp.forEach(item => {
+        const lines = doc.splitTextToSize(item, 170);
+        doc.text(lines, 20, yPosition);
+        yPosition += lines.length * 5 + 2;
+    });
+    
+    // Education
+    yPosition += 10;
+    doc.setFontSize(14);
+    doc.setTextColor(99, 102, 241);
+    doc.text('EDUCATION', 20, yPosition);
+    yPosition += 15;
+    
+    doc.setFontSize(12);
+    doc.setTextColor(30, 41, 59);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Master of Science in Data Science', 20, yPosition);
+    yPosition += 8;
+    doc.setFont('helvetica', 'normal');
+    doc.text('University Name (2016 - 2018)', 20, yPosition);
+    yPosition += 8;
+    doc.text('Specialized in Machine Learning and Statistical Analysis', 20, yPosition);
+    yPosition += 12;
+    
+    doc.setFont('helvetica', 'bold');
+    doc.text('Bachelor of Science in Computer Science', 20, yPosition);
+    yPosition += 8;
+    doc.setFont('helvetica', 'normal');
+    doc.text('University Name (2012 - 2016)', 20, yPosition);
+    yPosition += 8;
+    doc.text('Magna Cum Laude, GPA: 3.8/4.0', 20, yPosition);
+    
+    // Technical Skills
+    yPosition += 15;
+    doc.setFontSize(14);
+    doc.setTextColor(99, 102, 241);
+    doc.text('TECHNICAL SKILLS', 20, yPosition);
+    yPosition += 15;
+    
+    doc.setFontSize(10);
+    doc.setTextColor(30, 41, 59);
+    const skills = [
+        'Programming Languages: JavaScript (React, Node.js, ES6+), HTML, CSS, SQL, Python, R',
+        'Analytics Tools: Adobe Analytics, Google Analytics, Customer Journey Analytics, Power BI, Tableau',
+        'Cloud Platforms: AWS, Azure, Snowflake, Sevalla',
+        'Data Governance: Cookie Compliance, Data Privacy, Data QA, Analytics Audit'
+    ];
+    
+    skills.forEach(skill => {
+        const lines = doc.splitTextToSize(skill, 170);
+        doc.text(lines, 20, yPosition);
+        yPosition += lines.length * 5 + 3;
+    });
+    
+        // Generate PDF blob
+        const pdfBlob = doc.output('blob');
+        return URL.createObjectURL(pdfBlob);
+    } catch (error) {
+        console.error('Error generating PDF:', error);
+        
+        // Fallback: Create a simple text-based PDF-like file
+        try {
+            const textContent = generateTextContent();
+            const blob = new Blob([textContent], { type: 'application/pdf' });
+            return URL.createObjectURL(blob);
+        } catch (fallbackError) {
+            console.error('Fallback also failed:', fallbackError);
+            return null;
+        }
+    }
 }
 
 function generateTextContent() {

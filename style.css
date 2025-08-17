@@ -667,19 +667,52 @@ h1, h2, h3, h4, h5, h6 {
 .mbti-badge {
     display: inline-flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     background: linear-gradient(135deg, #6366F1, #8B5CF6);
     color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
+    padding: 2rem 4rem;
+    border-radius: 20px;
     margin-bottom: 2rem;
     font-weight: 600;
+    box-shadow: 0 12px 35px rgba(99, 102, 241, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    transform: scale(1.05);
 }
 
-.mbti-type {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 2px;
+.mbti-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    pointer-events: none;
+}
+
+
+.mbti-label {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    
+    /* Test with online blueprint image */
+    background-image: url('https://i.pinimg.com/736x/b5/aa/35/b5aa3554a644733fe53dda00026a37e6.jpg');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.mbti-content {
+    position: relative;
+    z-index: 2;
 }
 
 .mbti-description {
@@ -908,6 +941,40 @@ h1, h2, h3, h4, h5, h6 {
     width: 16px;
 }
 
+/* Career Wins Section */
+.career-wins-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.career-wins-eyebrow {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.career-wins-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.career-wins-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
 /* Projects Section */
 .projects-grid {
     display: grid;
@@ -953,10 +1020,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-title {
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 800;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
 }
 
 .project-description {
@@ -981,17 +1050,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .metric-value {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: 800;
     color: var(--primary);
     display: block;
+    letter-spacing: -0.01em;
 }
 
 .metric-label {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .project-tech {
@@ -1218,6 +1289,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .career-wins-title {
+        font-size: 2.5rem;
+    }
+    
+    .career-wins-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .career-wins-eyebrow {
+        font-size: 2.5rem;
+    }
+    
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
@@ -1457,8 +1540,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cv-section:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px var(--shadow);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .cv-section-header {
@@ -1486,6 +1569,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: var(--text-primary);
     margin: 0;
+    line-height: 1.2;
 }
 
 /* Experience Timeline */
@@ -1644,12 +1728,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .education-item {
     position: relative;
-    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
-    background: var(--bg-secondary);
-    border-radius: 16px;
-    border: 2px solid var(--border);
+    padding: 2.5rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
     transition: all 0.3s ease;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .education-item::before {
@@ -1664,8 +1749,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .education-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px var(--shadow);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     border-color: var(--primary);
 }
 
@@ -1681,20 +1766,19 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 15px;
     right: 20px;
-    background: var(--gradient-primary);
+    background: var(--primary);
     color: white;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
+    font-size: 0.7rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     z-index: 10;
-    margin-bottom: 1rem;
 }
 
 .education-bachelors .education-badge {
-    background: var(--gradient-secondary);
+    background: var(--accent);
 }
 
 .education-content {
@@ -1742,7 +1826,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .education-bachelors .highlight-tag {
-    background: var(--gradient-secondary);
+    background: var(--accent);
 }
 
 .education-details p {
@@ -1779,12 +1863,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .certification-item {
     position: relative;
-    padding: 2rem 2rem 2rem 2rem;
-    background: var(--bg-secondary);
-    border-radius: 16px;
-    border: 2px solid var(--border);
+    padding: 2.5rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
     transition: all 0.3s ease;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .certification-item::before {
@@ -1799,8 +1884,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .certification-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px var(--shadow);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     border-color: var(--primary);
 }
 
@@ -1824,27 +1909,27 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 15px;
     right: 20px;
-    background: var(--gradient-primary);
+    background: var(--primary);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
+    font-size: 0.7rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     z-index: 10;
 }
 
 .cert-professional .cert-badge {
-    background: var(--gradient-secondary);
+    background: var(--accent);
 }
 
 .cert-award .cert-badge {
-    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+    background: #f59e0b;
 }
 
 .cert-specialization .cert-badge {
-    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    background: #10b981;
 }
 
 .cert-icon {
@@ -1959,8 +2044,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .download-option:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px var(--shadow);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     border-color: var(--primary);
 }
 
