@@ -214,26 +214,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 800;
-    line-height: 1.1;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     font-weight: 500;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-muted);
     margin-bottom: 3rem;
     line-height: 1.7;
-    /* max-width: 500px; */
+    max-width: 600px;
 }
 
 .hero-cta {
@@ -434,7 +434,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section Styles */
 .section {
-    padding: 6rem 0;
+    padding: 5rem 0;
     position: relative;
 }
 
@@ -450,7 +450,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
 }
 
 .section-eyebrow {
@@ -463,18 +463,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
+    line-height: 1.2;
 }
 
 .section-description {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
+    font-weight: 400;
 }
 
 /* About Section */
@@ -743,20 +745,12 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .mbti-label {
-    font-size: 3.5rem;
-    font-weight: 900;
+    font-size: 2.5rem;
+    font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
-    line-height: 1.1;
-    
-    /* Test with online blueprint image */
-    background-image: url('https://i.pinimg.com/736x/b5/aa/35/b5aa3554a644733fe53dda00026a37e6.jpg');
-    background-size: cover;
-    background-position: center;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    line-height: 1.2;
 }
 
 .mbti-content {
@@ -845,10 +839,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
+    display: block;
     margin-bottom: 4rem;
 }
 
@@ -864,6 +855,9 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.1rem;
     color: var(--text-secondary);
     line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .about-text p {
@@ -997,18 +991,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .career-wins-eyebrow {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     display: block;
+    opacity: 0.8;
 }
 
 .career-wins-title {
-    font-size: 3.5rem;
-    font-weight: 900;
+    font-size: 3rem;
+    font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.2;
     background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1027,8 +1022,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
 }
 
 .project-card {
@@ -1045,36 +1040,89 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 25px 50px var(--shadow-lg);
 }
 
+/* Enhanced hover effects for project headers with images */
+.project-card:hover .project-header::before {
+    opacity: 0.5;
+}
+
+.project-card:hover .project-header {
+    background-size: 110% auto;
+    transition: background-size 0.3s ease;
+}
+
 .project-header {
     height: 200px;
     background: var(--gradient-primary);
+    background-size: 105%;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+    transition: all 0.3s ease;
 }
 
 .project-card:nth-child(even) .project-header {
     background: var(--gradient-secondary);
+    background-size: 105%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Responsive adjustments for project header images */
+@media (max-width: 768px) {
+    .project-header {
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-header {
+        height: 140px;
+    }
 }
 
 .project-icon {
     font-size: 3rem;
     color: white;
     opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+/* Add overlay for better text readability when using background images */
+.project-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show overlay when background image is present */
+.project-header[style*="background-image"]::before {
+    opacity: 1;
 }
 
 .project-content {
-    padding: 2.5rem;
+    padding: 2rem;
 }
 
 .project-title {
-    font-size: 1.6rem;
-    font-weight: 800;
+    font-size: 1.4rem;
+    font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-primary);
     letter-spacing: -0.01em;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 .project-description {
@@ -1107,11 +1155,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .metric-label {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    line-height: 1.3;
 }
 
 .project-tech {
@@ -1124,11 +1173,18 @@ h1, h2, h3, h4, h5, h6 {
 .tech-tag {
     background: var(--bg-accent);
     color: var(--primary);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 500;
     border: 1px solid rgba(99, 102, 241, 0.15);
+    transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-1px);
 }
 
 .project-link {
@@ -1418,15 +1474,15 @@ h1, h2, h3, h4, h5, h6 {
 /* Responsive Design */
 @media (max-width: 768px) {
     .career-wins-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .career-wins-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .career-wins-eyebrow {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .stats-grid {
@@ -1957,6 +2013,7 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
+    padding-top: 20px;
 }
 
 .skill-progress-category h4 {
@@ -1964,6 +2021,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 2rem;
+    padding-bottom: 20px;
     text-align: center;
 }
 
@@ -2630,5 +2688,205 @@ h1, h2, h3, h4, h5, h6 {
     
     .chart-container {
         height: 250px;
+    }
+}
+
+
+/* Platform Distribution Section */
+.platform-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.platform-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.platform-header h2 {
+    color: #1e293b;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+}
+
+.platform-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.platform-visualization {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.platform-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+.platform-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.platform-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--card-color-start), var(--card-color-end));
+}
+
+.platform-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.web-card {
+    --card-color-start: #3b82f6;
+    --card-color-end: #1d4ed8;
+}
+
+.cross-card {
+    --card-color-start: #6366f1;
+    --card-color-end: #8b5cf6;
+}
+
+.mobile-card {
+    --card-color-start: #f59e0b;
+    --card-color-end: #d97706;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.card-label {
+    font-size: 1.1rem;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-percentage {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    font-weight: 500;
+    background: #f1f5f9;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.platform-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.platform-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.breakdown-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.breakdown-section h3 {
+    color: #1e293b;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+}
+
+.breakdown-section p {
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .platform-section {
+        padding: 2rem 1rem;
+    }
+    
+    .platform-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .platform-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .card-number {
+        font-size: 2.5rem;
+    }
+    
+    .platform-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .platform-breakdown {
+        grid-template-columns: 1fr;
     }
 }

@@ -85,9 +85,16 @@ document.addEventListener('DOMContentLoaded', function() {
             data: {
                 labels: industries,
                 datasets: [{
-                    label: 'Projects',
-                    data: totalProjects,
-                    backgroundColor: industries.map((_, i) => projectsLed[i] > 0 ? '#6366f1' : '#3b82f6'),
+                    label: 'Individual Contributor',
+                    data: totalProjects.map((total, i) => total - projectsLed[i]),
+                    backgroundColor: '#3b82f6',
+                    borderWidth: 0,
+                    borderRadius: 6,
+                    borderSkipped: false,
+                }, {
+                    label: 'Leadership',
+                    data: projectsLed,
+                    backgroundColor: '#f59e0b',
                     borderWidth: 0,
                     borderRadius: 6,
                     borderSkipped: false,
@@ -100,26 +107,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     legend: {
                         position: 'top',
                         labels: {
-                            generateLabels: function(chart) {
-                                return [
-                                    {
-                                        text: '👑 Leadership Projects',
-                                        fillStyle: '#6366f1',
-                                        strokeStyle: '#6366f1',
-                                        lineWidth: 0
-                                    },
-                                    {
-                                        text: '🔧 Support Projects', 
-                                        fillStyle: '#3b82f6',
-                                        strokeStyle: '#3b82f6',
-                                        lineWidth: 0
-                                    }
-                                ];
-                            },
                             usePointStyle: true,
                             padding: 20,
                             font: {
-                                size: 12,
+                                size: 14,
                                 weight: 600
                             }
                         }
@@ -134,11 +125,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         callbacks: {
                             afterLabel: function(context) {
                                 const index = context.dataIndex;
+                                const datasetIndex = context.datasetIndex;
+                                const total = totalProjects[index];
                                 const led = projectsLed[index];
-                                if (led > 0) {
-                                    return `👑 Led ${led} of ${context.parsed.y} projects`;
+                                
+                                if (datasetIndex === 0) {
+                                    // Individual Contributor dataset
+                                    return `🔧 Individual Contributor: ${context.parsed.y} projects`;
+                                } else {
+                                    // Leadership dataset
+                                    return `👑 Leadership: ${context.parsed.y} projects`;
                                 }
-                                return '🔧 Support/Implementation role';
                             }
                         }
                     }
@@ -146,11 +143,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 scales: {
                     y: {
                         beginAtZero: true,
+                        stacked: true,
                         ticks: {
                             stepSize: 1,
                             color: '#64748b',
                             font: {
-                                weight: 500
+                                weight: 500,
+                                size: 14
                             }
                         },
                         grid: {
@@ -158,13 +157,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     },
                     x: {
+                        stacked: true,
                         ticks: {
                             maxRotation: 45,
                             minRotation: 45,
                             color: '#64748b',
                             font: {
                                 weight: 500,
-                                size: 11
+                                size: 14
                             }
                         },
                         grid: {
@@ -176,107 +176,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Leadership Timeline Chart
+    // New Visualization Placeholder
     const ctx2 = document.getElementById('leadershipChart');
-    if (ctx2 && typeof Chart !== 'undefined') {
-        new Chart(ctx2, {
-            type: 'line',
-            data: {
-                labels: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
-                datasets: [{
-                    label: 'Total Projects',
-                    data: [2, 3, 3, 1, 5, 1, 1, 2, 3],
-                    borderColor: '#6366f1',
-                    backgroundColor: 'rgba(99, 102, 241, 0.1)',
-                    fill: true,
-                    tension: 0.4,
-                    pointBackgroundColor: '#6366f1',
-                    pointBorderColor: '#ffffff',
-                    pointBorderWidth: 3,
-                    pointRadius: 6,
-                    pointHoverRadius: 8
-                }, {
-                    label: 'Led Analytics',
-                    data: [0, 2, 3, 1, 1, 1, 1, 2, 3],
-                    borderColor: '#3b82f6',
-                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                    fill: false,
-                    tension: 0.4,
-                    pointBackgroundColor: '#3b82f6',
-                    pointBorderColor: '#ffffff',
-                    pointBorderWidth: 3,
-                    pointRadius: 6,
-                    pointHoverRadius: 8
-                }, {
-                    label: 'Led Teams',
-                    data: [0, 0, 1, 0, 1, 0, 0, 2, 2],
-                    borderColor: '#f59e0b',
-                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
-                    fill: false,
-                    tension: 0.4,
-                    pointBackgroundColor: '#f59e0b',
-                    pointBorderColor: '#ffffff',
-                    pointBorderWidth: 3,
-                    pointRadius: 6,
-                    pointHoverRadius: 8
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                        labels: {
-                            usePointStyle: true,
-                            padding: 20,
-                            font: {
-                                size: 12,
-                                weight: 600
-                            }
-                        }
-                    },
-                    tooltip: {
-                        backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                        titleColor: '#1e293b',
-                        bodyColor: '#475569',
-                        borderColor: '#e2e8f0',
-                        borderWidth: 1,
-                        cornerRadius: 8
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            stepSize: 1,
-                            color: '#64748b',
-                            font: {
-                                weight: 500
-                            }
-                        },
-                        grid: {
-                            color: 'rgba(226, 232, 240, 0.5)'
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color: '#64748b',
-                            font: {
-                                weight: 500
-                            }
-                        },
-                        grid: {
-                            color: 'rgba(226, 232, 240, 0.3)'
-                        }
-                    }
-                },
-                interaction: {
-                    intersect: false,
-                    mode: 'index'
-                }
-            }
-        });
+    if (ctx2) {
+        // Placeholder for new visualization
+        ctx2.style.display = 'flex';
+        ctx2.style.alignItems = 'center';
+        ctx2.style.justifyContent = 'center';
+        ctx2.style.backgroundColor = '#f8fafc';
+        ctx2.style.border = '2px dashed #cbd5e1';
+        ctx2.style.borderRadius = '8px';
+        ctx2.style.minHeight = '300px';
+        ctx2.innerHTML = `
+            <div style="text-align: center; color: #64748b;">
+                <div style="font-size: 48px; margin-bottom: 16px;">📊</div>
+                <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">New Visualization</div>
+                <div style="font-size: 14px;">Coming soon...</div>
+            </div>
+        `;
     }
 
     // Animate counters
