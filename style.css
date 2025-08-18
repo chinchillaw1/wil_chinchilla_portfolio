@@ -816,6 +816,51 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Performance optimizations */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Optimize background images */
+.project-header[style*="background-image"] {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+}
+
+/* Optimize badge images */
+.cert-icon {
+    will-change: transform;
+}
+
+/* Reduce paint operations */
+.project-card,
+.experience-item,
+.certification-item,
+.volunteer-item,
+.lecture-item,
+.skills-category {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Image loading states */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Optimize critical images */
+.photo-image {
+    will-change: transform;
+}
+
 /* Animation enhancements */
 .fade-in {
     opacity: 0;
@@ -1063,6 +1108,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     border-radius: 12px 12px 0 0;
     transition: all 0.3s ease;
+    will-change: transform;
 }
 
 .project-card:nth-child(even) .project-header {

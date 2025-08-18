@@ -41,6 +41,28 @@ window.addEventListener('load', function() {
     }, 1000);
 });
 
+// Performance optimization: Intersection Observer for images
+function optimizeImageLoading() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
+    }
+}
+
+// Initialize image optimization
+document.addEventListener('DOMContentLoaded', optimizeImageLoading);
+
 // Manual trigger function
 function triggerProgressBars() {
     animateAllBars();
