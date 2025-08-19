@@ -63,10 +63,41 @@ function optimizeImageLoading() {
 // Initialize image optimization
 document.addEventListener('DOMContentLoaded', optimizeImageLoading);
 
+// Fade-in animation on scroll
+function initFadeInAnimations() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    if ('IntersectionObserver' in window) {
+        const fadeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        fadeElements.forEach(element => {
+            element.classList.add('visible');
+        });
+    }
+}
+
 // Manual trigger function
 function triggerProgressBars() {
     animateAllBars();
 }
+
+// Initialize fade-in animations
+document.addEventListener('DOMContentLoaded', initFadeInAnimations);
 
 
 // Analytics Dashboard Data and Functionality

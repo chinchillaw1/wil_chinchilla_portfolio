@@ -187,6 +187,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr;
     gap: 5rem;
     align-items: center;
+    width: 100%;
 }
 
 .hero-text {
@@ -446,6 +447,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    width: 100%;
 }
 
 .section-header {
@@ -814,12 +816,128 @@ h1, h2, h3, h4, h5, h6 {
     .personal-section {
         padding: 2rem;
     }
+    
+    /* Mobile container adjustments */
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+        gap: 3rem;
+    }
+    
+    /* Mobile projects grid */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Mobile section padding */
+    .section {
+        padding: 3rem 0;
+    }
+    
+    /* Mobile navigation content */
+    .nav-content {
+        padding: 1rem;
+    }
 }
 
 /* Performance optimizations */
 img {
     max-width: 100%;
     height: auto;
+}
+
+/* Mobile-specific viewport fixes */
+@media screen and (max-width: 428px) {
+    /* iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 15 Plus */
+    .container,
+    .hero-content,
+    .nav-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .project-card {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .section,
+    .section-alt {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+}
+
+@media screen and (max-width: 390px) {
+    /* iPhone 12, iPhone 13, iPhone 14, iPhone 15 */
+    .container,
+    .hero-content,
+    .nav-content {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    
+    /* Mobile grid adjustments for smaller screens */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .expertise-grid,
+    .experience-grid,
+    .certifications-grid,
+    .volunteer-grid,
+    .lectures-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Mobile touch targets */
+    .btn {
+        min-height: 44px;
+        padding: 1rem 1.5rem;
+    }
+    
+    .nav-links a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .mobile-menu-toggle {
+        min-height: 44px;
+        min-width: 44px;
+    }
 }
 
 /* Optimize background images */
@@ -871,6 +989,24 @@ img[loading="lazy"].loaded {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Fallback: Make fade-in elements visible after 3 seconds if JavaScript fails */
+@media (prefers-reduced-motion: no-preference) {
+    .fade-in {
+        animation: fadeInFallback 3s ease-out forwards;
+    }
+}
+
+@keyframes fadeInFallback {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Staggered animations for grid items */
@@ -1067,7 +1203,7 @@ img[loading="lazy"].loaded {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 
@@ -1589,6 +1725,7 @@ img[loading="lazy"].loaded {
     .contact-content {
         grid-template-columns: 1fr;
         gap: 3rem;
+        padding: 0 1rem;
     }
 
     .stats-grid {
@@ -1614,6 +1751,66 @@ img[loading="lazy"].loaded {
     .contact-form {
         padding: 2rem;
     }
+    
+    /* Ensure full width on mobile */
+    .hero,
+    .section,
+    .section-alt {
+        width: 100%;
+        min-width: 100%;
+    }
+    
+    /* Mobile project cards */
+    .project-card {
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* Mobile grid layouts */
+    .expertise-grid,
+    .experience-grid,
+    .certifications-grid,
+    .volunteer-grid,
+    .lectures-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Mobile form adjustments */
+    .contact-form {
+        width: 100%;
+    }
+    
+    .form-group {
+        width: 100%;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+    }
+    
+    /* Mobile download section */
+    .download-options {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .download-option {
+        padding: 2rem;
+    }
+    
+    /* Mobile text adjustments */
+    .download-description {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1636,6 +1833,40 @@ img[loading="lazy"].loaded {
 
     .achievement-cards {
         grid-template-columns: 1fr;
+    }
+    
+    /* Extra small mobile adjustments */
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .hero-content {
+        padding: 0 0.75rem;
+        gap: 2rem;
+    }
+    
+    .nav-content {
+        padding: 0.75rem;
+    }
+    
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .project-content {
+        padding: 1.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
     }
 }
 
@@ -2062,6 +2293,12 @@ img[loading="lazy"].loaded {
     padding-top: 20px;
 }
 
+/* Ensure skills section is visible */
+#expertise .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .skill-progress-category h4 {
     font-size: 1.2rem;
     font-weight: 700;
@@ -2412,7 +2649,7 @@ img[loading="lazy"].loaded {
 
 .download-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 
